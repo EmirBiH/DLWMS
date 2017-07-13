@@ -19,7 +19,25 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Datum.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="PolozeniPredmet.cpp" />
+    <ClCompile Include="Predmet.cpp" />
+    <ClCompile Include="Profesor.cpp" />
+    <ClCompile Include="SkolskaGodina.cpp" />
+    <ClCompile Include="StudemtDL.cpp" />
+    <ClCompile Include="Student.cpp" />
+    <ClCompile Include="StudentRedovan.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Datum.h" />
+    <ClInclude Include="PolozeniPredmet.h" />
+    <ClInclude Include="Predmet.h" />
+    <ClInclude Include="Profesor.h" />
+    <ClInclude Include="SkolskaGodina.h" />
+    <ClInclude Include="StudemtDL.h" />
+    <ClInclude Include="Student.h" />
+    <ClInclude Include="StudentRedovan.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{3732C5CE-1458-4792-9540-78DE85F75DD2}</ProjectGuid>
