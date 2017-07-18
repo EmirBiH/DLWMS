@@ -9,6 +9,7 @@ class Predmet
 	Profesor _profesor;
 public:
 	Predmet();
+	Predmet(int etcs, string n, Profesor prof);
 	~Predmet();
 };
 

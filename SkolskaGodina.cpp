@@ -1,27 +1,61 @@
 #include "SkolskaGodina.h"
+#include<string>
 
-
-
-bool SkolskaGodina::DodajStudenta(Student S)
+bool SkolskaGodina::DodajStudenta(Student *S)
 {
-	return false;
+	StudemtDL *pok = dynamic_cast<StudemtDL*>(S);
+	if (pok != nullptr)
+	{
+		_studenti.push_back(new StudemtDL(*pok));
+		pok = nullptr;
+	}
+	else {
+		StudentRedovan *nesto = dynamic_cast<StudentRedovan*>(S);
+		if (nesto != nullptr) {
+			_studenti.push_back(new StudentRedovan(*nesto));
+		}
+		else
+			return false;
+		nesto = nullptr;
+	}
+	return true;
 }
 
-bool SkolskaGodina::DodajPredmet(Predmet p)
+void SkolskaGodina::DodajStudente(vector<Student*> s)
 {
-	return false;
+	for (int i = 0; i < s.size(); i++)
+	{
+		StudentRedovan *pok = dynamic_cast<StudentRedovan*>(s[i]);
+		if (pok != nullptr)
+			_studenti.push_back(new StudentRedovan(*pok));
+		else {
+			StudemtDL *nesto = dynamic_cast<StudemtDL*>(s[i]);
+			_studenti.push_back(new StudemtDL(*nesto));
+		}
+	}
+}
+
+void SkolskaGodina::DodajNPP(NastavniPlan npp)
+{
+	_program = npp;
 }
 
 void SkolskaGodina::setSKGodina(string g)
 {
+	_skolskaGodina = g;
 }
 
-Student SkolskaGodina::NajboljiStudent()
+Student* SkolskaGodina::NajboljiStudent()
 {
-	return Student();
+	return nullptr;
 }
 
-SkolskaGodina::SkolskaGodina(string g = "N/A")
+int SkolskaGodina::getBrojStudenata()
+{
+	return _studenti.size();
+}
+
+SkolskaGodina::SkolskaGodina(string g)
 {
 	_skolskaGodina = g;
 }
@@ -29,4 +63,17 @@ SkolskaGodina::SkolskaGodina(string g = "N/A")
 
 SkolskaGodina::~SkolskaGodina()
 {
+}
+
+ostream & operator<<(ostream & cout, const SkolskaGodina & sk)
+{
+	cout << "Skolska: " << sk._skolskaGodina << endl;
+	cout << "Nastavni plan i program: " << sk._program.getGodina() << endl;
+	cout << "Studenti:" << endl;
+	for (int i = 0; i < sk._studenti.size(); i++)
+	{
+		(*sk._studenti[i]).info();
+		cout << endl;
+	}
+	return cout;
 }

@@ -9,6 +9,7 @@ class Profesor
 	string _prezime;
 	Datum _datumRodenja;
 public:
+	Profesor(string ime, string prezime, Datum d);
 	Profesor();
 	~Profesor();
 };

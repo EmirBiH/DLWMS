@@ -2,10 +2,19 @@
 
 
 
-Datum::Datum()
+Datum::Datum(int d, int m, int g)
 {
+	_dan = d;
+	_mjesec = m;
+	_godina = g;
 }
 
+Datum::Datum()
+{
+	_dan = 1;
+	_mjesec = 1;
+	_godina = 2000;
+}
 
 Datum::~Datum()
 {
@@ -13,20 +22,28 @@ Datum::~Datum()
 
 int Datum::getDan()
 {
-	return 0;
+	return _dan;
 }
 
 int Datum::getMjesec()
 {
-	return 0;
+	return _mjesec;
 }
 
 int Datum::getGodina()
 {
-	return 0;
+	return _godina;
 }
 
 int Datum::getIntOf()
 {
-	return 0;
+	int suma = 0;
+	suma = (_godina * 10000) + (_mjesec * 100) + _dan;
+	return suma;
+}
+
+std::ostream & operator<<(std::ostream & cout, const Datum & d)
+{
+	cout << d._dan << ":" << d._mjesec << ":" << d._godina;
+	return cout;
 }

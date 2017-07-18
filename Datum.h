@@ -1,4 +1,5 @@
 #pragma once
+#include<iostream>
 class Datum
 {
 	int _dan;
@@ -11,7 +12,9 @@ public:
 	int getGodina();
 	int getIntOf();
 
+	Datum(int d, int m, int g);
 	Datum();
+	friend std::ostream &operator<<(std::ostream&cout, const Datum &d);
 	~Datum();
 };
 

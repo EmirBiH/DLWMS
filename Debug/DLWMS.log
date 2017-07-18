@@ -1,1 +1,4 @@
-﻿LINK : fatal error LNK1561: entry point must be defined
+﻿  main.cpp
+c:\users\emir\desktop\dlwms\dlwms\main.cpp(63): warning C4018: '<': signed/unsigned mismatch
+  DLWMS.vcxproj -> C:\Users\Emir\Desktop\DLWMS\Debug\DLWMS.exe
+  DLWMS.vcxproj -> C:\Users\Emir\Desktop\DLWMS\Debug\DLWMS.pdb (Partial PDB)

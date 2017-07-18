@@ -20,7 +20,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Datum.cpp" />
+    <ClCompile Include="GodinaStudija.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="NastavniPlan.cpp" />
     <ClCompile Include="PolozeniPredmet.cpp" />
     <ClCompile Include="Predmet.cpp" />
     <ClCompile Include="Profesor.cpp" />
@@ -31,6 +33,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Datum.h" />
+    <ClInclude Include="GodinaStudija.h" />
+    <ClInclude Include="NastavniPlan.h" />
     <ClInclude Include="PolozeniPredmet.h" />
     <ClInclude Include="Predmet.h" />
     <ClInclude Include="Profesor.h" />
@@ -49,7 +53,7 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
-    <CharacterSet>MultiByte</CharacterSet>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>

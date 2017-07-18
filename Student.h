@@ -9,9 +9,12 @@ class Student
 {
 public:
 	Student();
+	Student(string ime, string prezime, string brindexa, Datum datumrodenja);
 	virtual ~Student();
-	double Prosjek();
-private:
+	virtual double Prosjek() = 0;
+	friend ostream & operator<<(ostream &cout, const Student &s);
+	virtual void info() = 0;
+protected:
 	string _ime;
 	string _prezime;
 	string _brojIndexa;
